@@ -14,9 +14,9 @@
   **generate_lars_path(weighted_data, weighted_labels)**: Applying lasso algorithm and return lars path for **weighted_data**(alphas and coef for lasso). **weighted_labels** is the corresponding labels.
   
   **forward_selection(self, data, labels, weights, num_features)**: This will apply **Ridge regression** and implement an iteration to evaluate features(number is **num_features**):  
-  clf = Ridge(alpha=0, fit_intercept=True, random_state=self.random_state)  
+  **clf = Ridge(alpha=0, fit_intercept=True, random_state=self.random_state)  
   used_features = []  
-  clf.fit(data[:, used_features + [feature]], labels,sample_weight=weights)  
+  clf.fit(data[:, used_features + [feature]], labels,sample_weight=weights)**  
 According to the score obtained the features will be added to a feature array(**used_features**) from the end to the first. Return this feature array.
   
   **feature_selection(self, data, labels, weights, num_features, method)**: This is to select an array of features according to the method(forward selection for example).
