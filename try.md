@@ -11,9 +11,11 @@
   The most important object is **limebase**, which is an abstract class for this linear locally learned model. Image,text and table data based lime model will be based on this abstract class. It includes several parameters: **kernel_fn** is the function to transform array of distances into floats;**random_state** is numpy.RandomState.
   
   **limebase** includes some functionalities:
-  **generate_lars_path(weighted_data, weighted_labels)**: Applying lasso algorithm and return lars path for weighted_data(alphas and coef). weighted_labels is the corresponding labels.
+  **generate_lars_path(weighted_data, weighted_labels)**: Applying lasso algorithm and return lars path for **weighted_data**(alphas and coef for lasso). **weighted_labels** is the corresponding labels.
   
-  **forward_selection(self, data, labels, weights, num_features)**: This will apply Ridge regression and implement an iteration to evaluate features(number is num_features). According to the score obtained the features will be added to a feature arrayfrom the end to the first. Return this feature array.
+  **forward_selection(self, data, labels, weights, num_features)**: This will apply **Ridge regression** and implement an iteration to evaluate features(number is **num_features**): 
+  lf.fit(data[:, used_features + [feature]], labels,sample_weight=weights)
+ According to the score obtained the features will be added to a feature array(**used_features**) from the end to the first. Return this feature array.
   
   **feature_selection(self, data, labels, weights, num_features, method)**: This is to select an array of features according to the method(forward selection for example).
   
