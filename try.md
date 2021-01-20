@@ -23,5 +23,18 @@ According to the score obtained the features will be added to a feature array(**
   **feature_selection(self, data, labels, weights, num_features, method)**: This is to select an array of features according to the method(forward selection for example).
   
   **explain_instance_with_data(self,neighborhood_data,neighborhood_labels,distances,label,num_features,feature_selection='auto',model_regressor=None)**: This is the core functionality of this object. It will input perturbed data(**neighborhood_data,neighborhood_labels**),labels and distance and to output explanation. Distance will be weighted with kernel: **weights = self.kernel_fn(distances)** and features will be selected with **feature_selection** method. After that, Ridge regression will be applied to build a locally learned linear model. With this model, explanation including features(number is **num_features**), coef,,lamda(Ridge model) and local prediction will be output. 
-  
-  
+ 
+ ### Example(lime_image)
+ Take lime_image as an example and it will import lime_base.
+ The first class is **ImageExplanation** including target image **image** and **segment** from sklearn segmentation algorithm.
+ The core class is **LimeImageExplainer** and this will explain the prediction. First step in initialization function is to use kernel to generate perturbed data:  
+        **kernel_fn = partial(kernel, kernel_width=kernel_width)  
+        self.random_state = check_random_state(random_state)  
+        self.feature_selection = feature_selection  
+        self.base = lime_base.LimeBase(kernel_fn, verbose, random_state=self.random_state)**  
+ And the explain functionality is **explain_instance** where the key parameters include **image**, **classifier_fn**(classifier function, e.g. classifier.predict_proba for scikitClassifier) and **distance_metric**(vary according to image,text or table).  
+ **segments = segmentation_fn(image)** can build a segment and this will be used in **ret_exp = ImageExplanation(image, segments)** where ret_exp is the explanation class for the target image(instance). After parameters like **label** set, ret_exp will invoke the fiunctionality **ret_exp.local_pred[label]) = self.base.explain_instance_with_data** which can be found in lime_base and ret_exp will be returned. A real example can be found in https://marcotcr.github.io/lime/tutorials/Tutorial%20-%20images.html. 
+ 
+ The output format can be found in **Explanation.py** including: **as_list,as_map, as_pyplot_figure** and so on.
+ 
+    
