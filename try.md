@@ -10,6 +10,7 @@
   The code can be found in https://github.com/marcotcr/lime.
   The most important object is **limebase**, which is an abstract class for this linear locally learned model. Image,text and table data based lime model will be based on this abstract class. It includes several parameters: **kernel_fn** is the function to transform array of distances into floats;**random_state** is numpy.RandomState.
   
+  ##limebase
   **limebase** includes some functionalities:
   **generate_lars_path(weighted_data, weighted_labels)**: Applying lasso algorithm and return lars path for **weighted_data**(alphas and coef for lasso). **weighted_labels** is the corresponding labels.
   
@@ -21,6 +22,6 @@ According to the score obtained the features will be added to a feature array(**
   
   **feature_selection(self, data, labels, weights, num_features, method)**: This is to select an array of features according to the method(forward selection for example).
   
-  **explain_instance_with_data(self,neighborhood_data,neighborhood_labels,distances,label,num_features,feature_selection='auto',model_regressor=None)**: This is the core functionality of this object. It will input perturbed data,labels and distance and to output explanation.
+  **explain_instance_with_data(self,neighborhood_data,neighborhood_labels,distances,label,num_features,feature_selection='auto',model_regressor=None)**: This is the core functionality of this object. It will input perturbed data(**neighborhood_data,neighborhood_labels**),labels and distance and to output explanation. Distance will be weighted with kernel: **weights = self.kernel_fn(distances)** and features will be selected with **feature_selection** method. After that, Ridge regression will be applied to build a locally learned linear model. With this model, explanation including features(number is **num_features**), coef,,lamda(Ridge model) and local prediction will be output. 
   
   
