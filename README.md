@@ -51,4 +51,6 @@ score(self, x, y):
             - y {pd.DataFrame} -- Raw ouput array of shape (batch_size, 1).
 
         Returns:
-            {float} -- Quantification of the efficiency of the model.
+            - MSE{float} -- normalized mean square error on x
+
+            -RMSE{float} -- non-normalized root mean square error on x
