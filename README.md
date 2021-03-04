@@ -70,3 +70,13 @@
         
     Returns:
         best_hp_list -- list including best epochs, batch_size, lr, layer1_nodes and layer2_nodes
+        
+## An example pipeline
+
+        x_train,y_train,x_test,y_test,x_val,y_val
+        regressor = Regressor(x_train)  #create a regressor
+        regressor.fit(x_train, y_train) # fit the regressor
+        pred = regressor.predict(x_test,y_test)
+        MSE,RMSE = regressor.score(x_test,y_test)
+        best_hp_list = RegressorHyperParameterSearch(x_train, y_train, x_val, y_val)
+        save_regressor(regressor)
