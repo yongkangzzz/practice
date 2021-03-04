@@ -58,12 +58,15 @@
  
 ## Hyper-parameter searching
 
-**RegressorHyperParameterSearch(x_train, y_train, x_test, y_test):**  
+**RegressorHyperParameterSearch(x_train, y_train, x_val, y_val):**  
     
     Performs a hyper-parameter for fine-tuning the regressor implemented in the Regressor class.
 
     Arguments:
-        Add whatever inputs you need.
+            - x_train {pd.DataFrame} -- Training input array 
+            - y_train {pd.DataFrame} -- Training output array
+            - x_val {pd.DataFrame} -- Validation input array
+            - y_val {pd.DataFrame} -- Training output array
         
     Returns:
-        The function should return your optimised hyper-parameters. 
+        best_hp_list -- list including best epochs, batch_size, lr, layer1_nodes and layer2_nodes
