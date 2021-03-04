@@ -55,3 +55,15 @@
             - MSE{float} -- normalized mean square error on x
 
             -RMSE{float} -- non-normalized root mean square error on x
+ 
+## Hyper-parameter searching
+
+**RegressorHyperParameterSearch(x_train, y_train, x_test, y_test):**
+        Performs a hyper-parameter for fine-tuning the regressor implemented 
+    in the Regressor class.
+
+    Arguments:
+        Add whatever inputs you need.
+        
+    Returns:
+        The function should return your optimised hyper-parameters. 
