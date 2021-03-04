@@ -16,9 +16,8 @@ Regressor(self,x, nb_epoch = 100, batch_size = 64, learning_rate = 0.001,layer1_
             - layer1_nodes{int} --  number of nodes on the first hidden layer
 
             - layer1_nodes{int} -- number of nodes on the second hidden layer
-
-
-fit(self, x, y):  
+        
+        fit(self, x, y):  
 
         Regressor training function
 
