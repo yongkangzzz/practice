@@ -1,6 +1,6 @@
 # Part2 - regression - API
 
-        **Regressor(__self__,x, nb_epoch = 100, batch_size = 64, learning_rate = 0.001,layer1_nodes = 300,layer2_nodes = 800)**:  
+**Regressor(__self__,x, nb_epoch = 100, batch_size = 64, learning_rate = 0.001,layer1_nodes = 300,layer2_nodes = 800)**:  
 
         Initialization
 
@@ -18,7 +18,7 @@
 
             - layer1_nodes{int} -- number of nodes on the second hidden layer
         
-        fit(self, x, y):  
+**fit(self, x, y):  **
 
         Regressor training function
 
