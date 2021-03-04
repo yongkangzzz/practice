@@ -29,7 +29,7 @@ Regressor(self,x, nb_epoch = 100, batch_size = 64, learning_rate = 0.001,layer1_
         Returns:
             self {Regressor} -- Trained model.  
             
-predict(self, x)
+        predict(self, x)
 
         Ouput the value corresponding to an input x.
 
@@ -40,7 +40,7 @@ predict(self, x)
         Returns:
             {np.darray} -- Predicted value for the given input (batch_size, 1).  
             
-score(self, x, y):  
+        score(self, x, y):  
 
         Function to evaluate the model accuracy on a validation dataset.
 
