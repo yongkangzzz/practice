@@ -28,6 +28,27 @@ fit(self, x, y):
             - y {pd.DataFrame} -- Raw output array of shape (batch_size, 1).
 
         Returns:
-            self {Regressor} -- Trained model.
+            self {Regressor} -- Trained model.  
+            
+predict(self, x)
 
+        Ouput the value corresponding to an input x.
 
+        Arguments:
+            x {pd.DataFrame} -- Raw input array of shape 
+                (batch_size, input_size).
+
+        Returns:
+            {np.darray} -- Predicted value for the given input (batch_size, 1).  
+            
+score(self, x, y):  
+
+        Function to evaluate the model accuracy on a validation dataset.
+
+        Arguments:
+            - x {pd.DataFrame} -- Raw input array of shape 
+                (batch_size, input_size).
+            - y {pd.DataFrame} -- Raw ouput array of shape (batch_size, 1).
+
+        Returns:
+            {float} -- Quantification of the efficiency of the model.
