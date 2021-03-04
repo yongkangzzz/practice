@@ -60,8 +60,7 @@
 
 **RegressorHyperParameterSearch(x_train, y_train, x_test, y_test):**  
     
-    Performs a hyper-parameter for fine-tuning the regressor implemented 
-    in the Regressor class.
+    Performs a hyper-parameter for fine-tuning the regressor implemented in the Regressor class.
 
     Arguments:
         Add whatever inputs you need.
