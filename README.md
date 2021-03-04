@@ -18,7 +18,7 @@
 
             - layer1_nodes{int} -- number of nodes on the second hidden layer
         
-**fit(self, x, y):  **
+**fit(self, x, y):**
 
         Regressor training function
 
